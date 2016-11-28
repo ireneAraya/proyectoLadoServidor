@@ -7,7 +7,7 @@ body {
 	background-color: #c0392b;
 }
 
-p.navbar-brand {
+h4.navbar-brand {
 	padding: 0;
 	font: 40px georgia, serif;
 	color: #ecf0f1;
