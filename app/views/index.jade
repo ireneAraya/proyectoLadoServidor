@@ -19,11 +19,27 @@ block content
 				div.tab-pane.active#elegir
 					div.row
 						div.col-xs-6.col-xs-offset-3
-							button#exampleID.exampleClass.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Cajas") Cajas
-							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Plataforma de Servicio") Plataforma de Servicio
-							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Crédito") Crédito
-							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Marchamo") Marchamo
-							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Personas con Discapacidad") Personas con Discapacidad
+							button#exampleID.exampleClass.btn.btn-default.btn-block(ng-click="getButtonData($event); count = count + 1; advstatus=true", ng-init="count=0", data="Cajas", data-toggle="modal" data-target="#myModal") Cajas
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event); count = count + 1", data="Plataforma de Servicio", data-toggle="modal" data-target="#myModal") Plataforma de Servicio
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event); count = count + 1", data="Crédito", data-toggle="modal" data-target="#myModal") Crédito
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event); count = count + 1", data="Marchamo", data-toggle="modal" data-target="#myModal") Marchamo
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event); countDis = countDis + 1", data="Personas con Discapacidad" data-toggle="modal" data-target="#myModal") Personas con Discapacidad
+				<!-- Modal -->
+				div#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+					div.modal-dialog(role="document")
+						div.modal-content
+							div.modal-header
+								button.close(type="button", data-dismiss="modal", aria-label="Close")
+									span(aria-hidden="true") &times;
+								h4#myModalLabel.modal-title Cajas
+							div.modal-body
+								p Su ficha es: 
+									span C{{count}}
+									span C{{countDis}}
+							div.modal-footer
+								button.btn.btn-secondary(type="button", data-dismiss="modal") Close
+				
+
 				div.tab-pane#listas
 					div.row
 						.col-xs-4

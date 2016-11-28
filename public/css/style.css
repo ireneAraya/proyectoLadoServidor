@@ -16,3 +16,21 @@ h4.navbar-brand {
 .nav-pills {
 	padding-top: 5px;
 }
+
+.modal-content {
+	text-align: center;
+}
+
+.modal-content .modal-title {
+	font-size: 25px
+}
+
+.modal-body p {
+	font-size: 20px
+}
+
+.modal-body p span {
+	font-size: 100px;
+    width: 100%;
+    display: inline-block;
+}
