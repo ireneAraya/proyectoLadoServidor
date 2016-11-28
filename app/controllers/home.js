@@ -1,18 +1,20 @@
 var express = require('express'),
-  router = express.Router(),
-  mongoose = require('mongoose'),
-  Article = mongoose.model('Article');
+    app = express(),
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    db = mongoose.createConnection('localhost', 'bankApp'),
+    Listas = mongoose.model('lists')
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
 router.get('/', function (req, res, next) {
-  Article.find(function (err, articles) {
+  Listas.find(function (err, lists) {
     if (err) return next(err);
     res.render('index', {
-      title: 'Generator-Express MVC',
-      articles: articles
+      title: 'BARECO',
+      lists: lists
     });
   });
 });

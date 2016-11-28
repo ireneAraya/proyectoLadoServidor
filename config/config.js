@@ -9,7 +9,7 @@ var config = {
       name: 'proyecto'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/proyecto-development'
+    db: 'mongodb://localhost/bankApp'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'proyecto'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/proyecto-test'
+    db: 'mongodb://localhost/bankApp'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'proyecto'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/proyecto-production'
+    db: 'mongodb://localhost/bankApp'
   }
 };
 
