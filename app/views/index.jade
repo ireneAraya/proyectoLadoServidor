@@ -1,41 +1,42 @@
 extends layout
 
 block content
-	nav.navbar
-		div.container-fluid.main-nav
-			div.container
-				div.navbar-header
-					h4.navbar-brand(href='#') BARECO
-					p Su banco
-				ul.nav.navbar-right.nav-pills
-					li.active
-						a(href='#elegir', data-toggle='tab') Elegir Ventanilla
-					li
-						a(href='#listas', data-toggle='tab') Lista de Tareas
+	div(ng-app="bankApp")
+		nav.navbar
+			div.container-fluid.main-nav
+				div.container
+					div.navbar-header
+						h4.navbar-brand(href='#') BARECO
+						p Su banco
+					ul.nav.navbar-right.nav-pills
+						li.active
+							a(href='#elegir', data-toggle='tab') Elegir Ventanilla
+						li
+							a(href='#listas', data-toggle='tab') Lista de Tareas
 
-	div.container
-		div.tab-content.clearfix
-			div.tab-pane.active#elegir
-				div.row
-					div.col-xs-6.col-xs-offset-3
-						button.btn.btn-default.btn-block Cajas
-						button.btn.btn-default.btn-block Plataforma de Servicio
-						button.btn.btn-default.btn-block Crédito
-						button.btn.btn-default.btn-block Marchamo
-						button.btn.btn-default.btn-block Personas con Discapacidad
-			div.tab-pane#listas
-				div.row
-					.col-xs-4
-						h2.text-centered Elegir Ficha
-					.col-xs-4
-						h2.text-centered Fichas en Progreso
-					.col-xs-4
-						h2.text-centered Fichas Terminadas
+		div.container(ng-controller="BoardPageCtrl")
+			div.tab-content.clearfix
+				div.tab-pane.active#elegir
+					div.row
+						div.col-xs-6.col-xs-offset-3
+							button#exampleID.exampleClass.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Cajas") Cajas
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Plataforma de Servicio") Plataforma de Servicio
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Crédito") Crédito
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Marchamo") Marchamo
+							button.btn.btn-default.btn-block(ng-click="getButtonData($event)", data="Personas con Discapacidad") Personas con Discapacidad
+				div.tab-pane#listas
+					div.row
+						.col-xs-4
+							h2.text-centered Elegir Ficha
+						.col-xs-4
+							h2.text-centered Fichas en Progreso
+						.col-xs-4
+							h2.text-centered Fichas Terminadas
 
 
 
 
-					// - for(var i = 0; i < lists.length; ++i){
-					// ul
-					// 	li #{lists[i].name}
-					// -}
+						// - for(var i = 0; i < lists.length; ++i){
+						// ul
+						// 	li #{lists[i].name}
+						// -}
